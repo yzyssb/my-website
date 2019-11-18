@@ -21,7 +21,13 @@ export default {
   name: 'articleDetail',
   data () {
     return {
-      detailObj: {}
+      detailObj: {},
+      pageName:''
+    }
+  },
+  metaInfo(){
+    return{
+      title:this.pageName
     }
   },
   methods: {
@@ -31,6 +37,7 @@ export default {
       }
       getArticleDetail(params).then(res => {
         this.detailObj = res.data
+        this.pageName=2222
       })
     }
   },

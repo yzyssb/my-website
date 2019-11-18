@@ -14,6 +14,9 @@ import VueLazyload from 'vue-lazyload'
 import axios from './api/api.js'
 import Cors from 'cors'
 import VueAxios from 'vue-axios'
+import MetaInfo from 'vue-meta-info'
+
+Vue.use(MetaInfo)
 
 import "babel-polyfill";
 
