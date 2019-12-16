@@ -69,3 +69,12 @@ export function getArticleDetail(data) {
         data: data
     })
 }
+
+//上传图片
+export function qiuniuUpToken(data) {
+    return axios({
+        url: '/admin/file/upload/qiuniuUpToken',
+        method: 'post',
+        data: data
+    })
+}

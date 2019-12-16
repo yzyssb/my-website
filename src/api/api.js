@@ -8,9 +8,13 @@ import VueCookies from 'vue-cookies';
 
 
 if (process.env.NODE_ENV == "development") {
-  axios.defaults.baseURL = 'http://192.168.1.195/tp5/public';
+  if (window.location.host == '192.168.1.195:8080') {
+    axios.defaults.baseURL = 'https://pre-api.dazuhang.com'
+  } else {
+    axios.defaults.baseURL = 'http://192.168.1.195/tp5/public';
+  }
 } else if (process.env.NODE_ENV == "production") {
-  axios.defaults.baseURL = window.location.protocol + "//yangzhiyuan.top"
+  axios.defaults.baseURL = window.location.protocol + "//yangzhiyuan.top/tp5/public"
 }
 axios.defaults.timeout = 20000;
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';

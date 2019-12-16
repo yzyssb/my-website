@@ -129,6 +129,9 @@ img[lazy="error"] {
 .c9{
   color:#999;
 }
+.mb20{
+  margin-bottom:20px;
+}
 
 /* 列表暂无数据 */
 .no-data {
@@ -161,4 +164,12 @@ img[lazy="error"] {
 }
 .app-page{
   padding-top:60px;
+}
+.page{
+  padding:30px 0;
+}
+
+
+.el-col:nth-child(odd){
+  background-color:#fff !important;
 }

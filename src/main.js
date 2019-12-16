@@ -16,6 +16,9 @@ import Cors from 'cors'
 import VueAxios from 'vue-axios'
 import MetaInfo from 'vue-meta-info'
 
+import VueCropper from 'vue-cropper'
+Vue.use(VueCropper)
+
 Vue.use(MetaInfo)
 
 import "babel-polyfill";

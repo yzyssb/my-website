@@ -1,7 +1,6 @@
 <template>
   <div class="yzy-page index-page">
     <div class="yzy-container index-container flex-column">
-      <!-- <el-input placeholder="请输入关键词" clearable v-model="query.key" suffix-icon="el-icon-search" @keyup.native.enter="getAllArticles"></el-input> -->
       <ul class="category-list flex-row">
         <li v-for="(v,i) in categoryList" :key="i" :class="{'active':currentId==v.id,'pointer':true}" @click="chooseCategory(v)">
           {{v.name}}

@@ -1,6 +1,6 @@
 <template>
-  <div class="app-page">
-    <common-header @transferData="getSearch"></common-header>
+  <div :class="$route.meta.needHeader?'app-page':'page'">
+    <common-header v-if="$route.meta.needHeader" @transferData="getSearch"></common-header>
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive" ref="mainRef" />
     </keep-alive>

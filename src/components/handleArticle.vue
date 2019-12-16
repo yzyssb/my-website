@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="Are you happy to add it?" :visible.sync="visible" width="800px" top="50px">
+  <el-dialog title="Are you happy to add it?" :visible.sync="visible" width="1000px" top="50px">
     <el-form :model="formData" ref="dataForm" :rules="rules" label-width="80px">
       <el-form-item label="标题" prop="title">
         <el-input v-model="formData.title"/>
@@ -51,7 +51,7 @@ export default {
             trigger: ["blur", "change"]
           }
         ],
-        catergory_id: [
+        category_id: [
           {
             required: true,
             message: "请选择",
