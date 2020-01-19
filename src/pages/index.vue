@@ -346,7 +346,7 @@ export default {
 
       &.jump-circle-t {
         bottom: initial;
-        top: 0;
+        top: 60px;
         right: 0;
         transform: scale(0.5);
         background: lightsalmon;

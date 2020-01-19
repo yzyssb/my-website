@@ -8,11 +8,7 @@ import VueCookies from 'vue-cookies';
 
 
 if (process.env.NODE_ENV == "development") {
-  if (window.location.host == '192.168.1.195:8080') {
-    axios.defaults.baseURL = 'https://pre-api.dazuhang.com'
-  } else {
-    axios.defaults.baseURL = 'http://192.168.1.195/tp5/public';
-  }
+  axios.defaults.baseURL = 'http://192.168.1.195/tp5/public';
 } else if (process.env.NODE_ENV == "production") {
   axios.defaults.baseURL = window.location.protocol + "//yangzhiyuan.top/tp5/public"
 }
@@ -33,7 +29,7 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
   if (response.data) {
     if (response.data.code != 0) {
-      Message.error({ message: response.data.msg, duration: 0 })
+      Message.error({ message: response.data.msg, duration: 2000 })
       return Promise.reject(response.data.msg)
     }
     return response.data

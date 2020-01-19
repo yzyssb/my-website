@@ -40,3 +40,18 @@ export function multiUpload(data) {
         processData: false,
     })
 }
+//从服务器上删除图片
+export function delFile(data) {
+    return axios({
+        url: '/delFile',
+        method: 'post',
+        data: data
+    })
+}
+export function delAllFiels(data) {
+    return axios({
+        url: '/delAllFiels',
+        method: 'post',
+        data: data
+    })
+}

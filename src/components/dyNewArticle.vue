@@ -7,6 +7,12 @@
       <el-form-item label="摘要" prop="sub_title">
         <el-input type="textarea" v-model="formData.sub_title" />
       </el-form-item>
+      <el-form-item label="展示类型" prop="type">
+        <el-radio-group v-model="formData.type" @change="typeChange">
+          <el-radio label="1">真</el-radio>
+          <el-radio label="2">假</el-radio>
+        </el-radio-group>
+      </el-form-item>
       <el-form-item label="封面" prop="img_arr">
         <upload-img :urls="formData.img_arr" @transferUrls="getUrls" />
       </el-form-item>
@@ -35,6 +41,7 @@ export default {
       formJson: {
         title: "",
         sub_title:"",
+        type:'1',
         img_arr:[],
         category_id: "",
         content: ""
@@ -56,10 +63,10 @@ export default {
             trigger: ["blur", "change"]
           }
         ],
-        img_arr:[
+        type:[
             {
             required: true,
-            message: "请上传",
+            message: "请选择",
             trigger: ["blur", "change"]
           }
         ],
@@ -84,14 +91,14 @@ export default {
       Tinymce:resolve=>require(['./Tinymce/index'],resolve),
       uploadImg:resolve=>require(['./uploadImg'],resolve),
   },
-  created(){
-      this.dyCategoryList()
-  },
   methods: {
-    dyCategoryList(){
-        dyCategoryList().then(res=>{
+    dyCategoryList(data){
+        dyCategoryList(data).then(res=>{
             this.categoryList=res.data
         })
+    },
+    typeChange(e){
+      this.dyCategoryList({type:e})
     },
     getUrls(data){
         this.$set(this.formData,'img_arr',data)

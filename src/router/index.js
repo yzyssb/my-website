@@ -29,6 +29,14 @@ var router = new VueRouter({
         needHeader:false
       }
     },
+    { //测试页
+      path: '/html',
+      name: 'downloadHTML',
+      component: resolve => require(['../pages/downloadHTML'], resolve),
+      meta:{
+        needHeader:false
+      }
+    },
     { //斗鱼新闻列表
       path: '/dy',
       name: 'dyList',

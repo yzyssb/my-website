@@ -13,8 +13,8 @@
 export default {
     props:{
         query:{
-            type:Array,
-            default:[]
+            type:Object,
+            default:{}
         }
     },
     methods:{
