@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   @import '../static/css/common.scss';
   /* elment-ui自带message组件 */
   /* [class^="el-message__icon"] {
